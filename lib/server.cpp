@@ -25,13 +25,14 @@ class Response {
  */
 class Serv { 
     public:
-        int& counting, milisecondsPassed;
+        bool& counting;
+        int& milisecondsPassed;
         double& current;
 
         /**
          * This is the constructor. It receives arduino control flags by reference
          */
-        Serv(int &countingA, int &milisecondsPassedA, double &currentA):counting(countingA),milisecondsPassed(milisecondsPassedA),current(currentA){}
+        Serv(bool &countingA, int &milisecondsPassedA, double &currentA):counting(countingA),milisecondsPassed(milisecondsPassedA),current(currentA){}
 
         /**
          * This method receives a byte and retuns a method

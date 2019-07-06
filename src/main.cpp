@@ -17,7 +17,7 @@ bool counting = false;
 unsigned long int miliseconds_passed = 0;
 unsigned long int delta;
 Response r = new Response();
-Serv sv = new Serv();
+Serv sv = new Serv(counting, miliseconds_passed, current);
 
 // Declaring functions
 /* Returns the current in the CURRENT_IN pin */
