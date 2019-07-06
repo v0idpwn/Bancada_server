@@ -11,12 +11,12 @@ class Serv {
         int& counting, milisecondsPassed;
         double& current;
         Serv(int &countingA, int &milisecondsPassedA, double &currentA);
-        Response runCommand(unsigned int command);
+        Response* runCommand(unsigned int command);
     private: 
-        Response getStatus();
-        Response getCount();
-        Response startCount();
-        Response pauseCount();
-        Response continueCount();
-        Response stopCount();
+        Response* getStatus();
+        Response* getCount();
+        Response* startCount();
+        Response* pauseCount();
+        Response* continueCount();
+        Response* stopCount();
 };
