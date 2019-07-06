@@ -8,9 +8,10 @@ class Response {
 
 class Serv { 
     public:
-        int& counting, milisecondsPassed;
+        bool& counting;
+        unsigned long int& milisecondsPassed;
         double& current;
-        Serv(int &countingA, int &milisecondsPassedA, double &currentA);
+        Serv(bool &countingA, unsigned long int &milisecondsPassedA, double &currentA);
         Response* runCommand(unsigned int command);
     private: 
         Response* getStatus();

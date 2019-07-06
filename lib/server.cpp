@@ -26,18 +26,18 @@ class Response {
 class Serv { 
     public:
         bool& counting;
-        int& milisecondsPassed;
+        unsigned long int& milisecondsPassed;
         double& current;
 
         /**
          * This is the constructor. It receives arduino control flags by reference
          */
-        Serv(bool &countingA, int &milisecondsPassedA, double &currentA):counting(countingA),milisecondsPassed(milisecondsPassedA),current(currentA){}
+        Serv(bool &countingA, unsigned long int &milisecondsPassedA, double &currentA):counting(countingA),milisecondsPassed(milisecondsPassedA),current(currentA){}
 
         /**
          * This method receives a byte and retuns a method
          */
-        Response* runCommand(unsigned int command){ 
+        Response runCommand(unsigned int command){ 
             switch(command){
                 case 0x1:
                     return getStatus();
@@ -52,9 +52,9 @@ class Serv {
                 case 0x6:
                     return stopCount();
                 case 0xF:
-                    return (new Response(0, "I\'m working, or at least responding"));
+                    return (Response(0, "I\'m working, or at least responding"));
                 default:
-                    return (new Response(2, "Couldn't understand the command"));
+                    return (Response(2, "Couldn't understand the command"));
             }
         }
     private: 
@@ -62,23 +62,23 @@ class Serv {
          * Returns sensor data
          * 0001
          */
-        Response* getStatus(){
+        Response getStatus(){
             char temp[10];
             dtostrf(this->current,2,2,temp);
             strcat(temp, "A");
-            return (new Response(0, temp));
+            return (Response(0, temp));
         }
 
         /**
          * Returns the current status of the count.
          * 0010
          */
-        Response* getCount(){
+        Response getCount(){
             double count = this->milisecondsPassed / 1000;
             char temp[10];
             dtostrf(count,2,2,temp);
             strcat(temp, "s");
-            return (new Response(0, temp));
+            return (Response(0, temp));
         }
 
 
@@ -86,36 +86,36 @@ class Serv {
          * Starts a countdown from 300 seconds
          * 0011
          */
-        Response* startCount(){
+        Response startCount(){
             counting = true;
-            return (new Response(0, "COUNTDOWN STARTED"));
+            return (Response(0, "COUNTDOWN STARTED"));
         }
 
         /**
          * Pauses counting
          * 0100
          */
-        Response* pauseCount(){
+        Response pauseCount(){
             counting = false;
-            return (new Response(0, "COUNTDOWN PAUSED"));
+            return (Response(0, "COUNTDOWN PAUSED"));
         }
 
         /**
          * Resumes counting
          * 0101
          */
-        Response* continueCount(){
+        Response continueCount(){
             counting = true;
-            return (new Response(0, "COUNTDOWN RESTARTED"));
+            return (Response(0, "COUNTDOWN RESTARTED"));
         }
 
         /**
          * Stops counting
          * 0110
          */
-        Response* stopCount(){
+        Response stopCount(){
             counting = false;
             milisecondsPassed = 0;
-            return  (new Response(0, "COUNTDOWN STOPPED"));
+            return  (Response(0, "COUNTDOWN STOPPED"));
         }
 };
