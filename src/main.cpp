@@ -1,5 +1,15 @@
+
 #include <Arduino.h>
-#include <Server.h>
+#ifndef RESPONSE
+#define RESPONSE
+#include <response.hpp>
+#endif
+
+
+#ifndef SERVER
+#define SERVER
+#include <server.hpp>
+#endif
 
 #define BUZZER_FET 30
 #define IGNITE_FET 31
