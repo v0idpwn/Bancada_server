@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.windows": {
+        "PATH": "C:\\Users\\v0idp\\.platformio\\penv\\Scripts;C:\\Users\\v0idp\\.platformio\\penv;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\v0idp\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\v0idp\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Python\\Python37\\Scripts\\;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Python\\Python37\\;C:\\Users\\v0idp\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\v0idp\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\v0idp\\AppData\\Local\\GitHubDesktop\\bin",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}

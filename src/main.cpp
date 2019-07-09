@@ -41,7 +41,7 @@ void encodeResponse(char *buffer, Response r){
   sprintf(buffer, "%d - %s", r.status, r.payload);
 }
 
-/* Starts the ignition process; */
+/** Starts the ignition process; */
 void ignite(){
   digitalWrite(IGNITE_FET, HIGH);
 }

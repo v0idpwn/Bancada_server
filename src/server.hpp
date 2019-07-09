@@ -10,7 +10,7 @@ class Serv {
         double& current;
         Serv(bool &countingA, unsigned long int &milisecondsPassedA, double &currentA);
         Response runCommand(unsigned int command);
-    private: 
+    protected: 
         Response getStatus();
         Response getCount();
         Response startCount();
